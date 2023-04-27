@@ -1,6 +1,10 @@
 import React from "react";
 import CardTicket from "../../components/CardTicket";
-import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
+import {
+  RiArrowLeftSLine,
+  RiArrowRightSLine,
+  RiSearch2Line,
+} from "react-icons/ri";
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import { Link } from "react-router-dom";
 import "@szhsin/react-menu/dist/index.css";
@@ -10,6 +14,22 @@ import PlanillaPage from "../../components/Comfirmed";
 const Home = () => {
   return (
     <div>
+      <div
+        style={{
+          position: "absolute",
+          top: "30px",
+          border: "1px solid black",
+          borderRadius: "15px",
+        }}
+      >
+        <RiSearch2Line className="absolute left-4 top-1/2 -translate-y-1/2" />
+        <input
+          type="text"
+          className="bg-white outline-none py-1 pl-10 pr-4 rounded-full"
+          placeholder="Search"
+          style={{ width: "600px", border: "5px solid #03494D" }}
+        />
+      </div>
       <div className="flex items-center justify-between mb-10">
         <h1 className="text-4xl text-white">
           Good morning, Aguilar J.Eduardo!
@@ -41,7 +61,7 @@ const Home = () => {
         />
         <CardTicket
           ticket="close"
-          totalTickets="10,000"
+          totalTickets="125,000"
           text="Total quantity"
           texto="Finishing projects"
         />
