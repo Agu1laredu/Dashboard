@@ -142,6 +142,33 @@ const Home = () => {
   return (
     <div>
       <div
+        className="flex justify-center"
+        style={{ position: "relative", top: "30px" }}
+      >
+        <button
+          style={{ width: "200px", border: "2px solid black" }}
+          onClick={() => setIsClient(true)}
+          className={`mr-2 ${
+            !isClient
+              ? "bg-secondary-200 text-secondary-900"
+              : "bg-secondary-900 text-gray-300"
+          } py-2 px-4 rounded-md text-sm font-medium`}
+        >
+          Clients
+        </button>
+        <button
+          style={{ width: "200px", border: "2px solid black" }}
+          onClick={() => setIsClient(false)}
+          className={`ml-2 ${
+            isClient
+              ? "bg-secondary-200 text-secondary-900"
+              : "bg-secondary-900 text-gray-300"
+          } py-2 px-4 rounded-md text-sm font-medium`}
+        >
+          Employees
+        </button>
+      </div>
+      <div
         className="p-8 rounded-xl"
         style={{
           backgroundColor: "#03494D",
@@ -152,33 +179,6 @@ const Home = () => {
           overflowY: "scroll",
         }}
       >
-        <div
-          className="flex justify-center"
-          style={{ position: "relative", top: "-10px", left: "-35%" }}
-        >
-          <button
-            style={{ width: "200px", border: "2px solid black" }}
-            onClick={() => setIsClient(true)}
-            className={`mr-2 ${
-              !isClient
-                ? "bg-secondary-200 text-secondary-900"
-                : "bg-secondary-900 text-gray-300"
-            } py-2 px-4 rounded-md text-sm font-medium`}
-          >
-            Clients
-          </button>
-          <button
-            style={{ width: "200px", border: "2px solid black" }}
-            onClick={() => setIsClient(false)}
-            className={`ml-2 ${
-              isClient
-                ? "bg-secondary-200 text-secondary-900"
-                : "bg-secondary-900 text-gray-300"
-            } py-2 px-4 rounded-md text-sm font-medium`}
-          >
-            Employees
-          </button>
-        </div>
         {filteredPlanilla.map(({ Id, Type, State, Process }) => (
           <div key={Id}>
             <div

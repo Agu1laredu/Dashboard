@@ -103,7 +103,7 @@ const Header = () => {
           menuButton={
             <MenuButton className="flex items-center gap-x-2 hover:bg-secondary-100 p-2 rounded-lg transition-colors">
               <img
-                src="https://img.freepik.com/foto-gratis/feliz-optimista-guapo-gerente-ventas-latina-apuntando-lado-mirando-camara_1262-12679.jpg"
+                src="https://cdn-icons-png.flaticon.com/512/2503/2503707.png"
                 className="w-6 h-6 object-cover rounded-full"
               />
               <span>Aguilar J.Eduardo</span>
@@ -122,7 +122,7 @@ const Header = () => {
               className="rounded-lg transition-colors text-gray-300 hover:bg-secondary-900 flex items-center gap-x-4 py-2 px-6 flex-1"
             >
               <img
-                src="https://img.freepik.com/foto-gratis/feliz-optimista-guapo-gerente-ventas-latina-apuntando-lado-mirando-camara_1262-12679.jpg"
+                src="https://cdn-icons-png.flaticon.com/512/2503/2503707.png"
                 className="w-8 h-8 object-cover rounded-full"
               />
               <div className="flex flex-col text-sm">

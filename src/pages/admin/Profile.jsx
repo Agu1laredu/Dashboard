@@ -24,7 +24,7 @@ const Profile = () => {
             <div className="flex-1">
               <div className="relative mb-2">
                 <img
-                  src="https://img.freepik.com/foto-gratis/negocios-finanzas-empleo-concepto-mujeres-emprendedoras-exitosas-joven-empresaria-segura-anteojos-mostrando-gesto-pulgar-arriba-sostenga-computadora-portatil-garantice-mejor-calidad-servicio_1258-59118.jpg"
+                  src="https://cdn-icons-png.flaticon.com/512/2503/2503707.png"
                   className="w-28 h-28 object-cover rounded-lg"
                 />
                 <label
@@ -43,7 +43,7 @@ const Profile = () => {
           <div className="flex flex-col gap-y-2 md:flex-row md:items-center mb-8">
             <div className="w-full md:w-1/4">
               <p>
-                Nombre completo <span className="text-red-500">*</span>
+                Full name <span className="text-red-500">*</span>
               </p>
             </div>
             <div className="flex-1 flex items-center gap-4">
@@ -66,7 +66,7 @@ const Profile = () => {
           <div className="flex flex-col md:flex-row md:items-center gap-y-2 mb-8">
             <div className="w-full md:w-1/4">
               <p>
-                Nombre de la empresa <span className="text-red-500">*</span>
+                Company name<span className="text-red-500">*</span>
               </p>
             </div>
             <div className="flex-1">
@@ -80,7 +80,7 @@ const Profile = () => {
           <div className="flex flex-col md:flex-row md:items-center gap-y-2 mb-8">
             <div className="w-full md:w-1/4">
               <p>
-                Número de contacto <span className="text-red-500">*</span>
+                Contact number <span className="text-red-500">*</span>
               </p>
             </div>
             <div className="flex-1">
@@ -94,7 +94,7 @@ const Profile = () => {
           <div className="flex flex-col md:flex-row md:items-center gap-y-2 mb-8">
             <div className="w-full md:w-1/4">
               <p>
-                Página web <span className="text-red-500">*</span>
+                Web page <span className="text-red-500">*</span>
               </p>
             </div>
             <div className="flex-1">
@@ -108,7 +108,7 @@ const Profile = () => {
           <div className="flex flex-col md:flex-row md:items-center gap-y-2 mb-8">
             <div className="w-full md:w-1/4">
               <p>
-                País <span className="text-red-500">*</span>
+                Country<span className="text-red-500">*</span>
               </p>
             </div>
             <div className="flex-1">
@@ -125,7 +125,7 @@ const Profile = () => {
           <div className="flex flex-col md:flex-row md:items-center gap-y-2 mb-8">
             <div className="w-full md:w-1/4">
               <p>
-                Ciudad <span className="text-red-500">*</span>
+                City <span className="text-red-500">*</span>
               </p>
             </div>
             <div className="flex-1">
@@ -146,35 +146,35 @@ const Profile = () => {
         <hr className="my-8 border-gray-500/30" />
         <div className="flex justify-end">
           <button className="bg-primary/80 text-black py-2 px-4 rounded-lg hover:bg-primary transition-colors">
-            Guardar
+            Save
           </button>
         </div>
       </div>
       {/* Change password */}
       <div className="bg-secondary-100 p-8 rounded-xl mb-8">
-        <h1 className="text-xl text-gray-100">Usuario y contraseña</h1>
+        <h1 className="text-xl text-gray-100">User and password</h1>
         <hr className="my-8 border-gray-500/30" />
         <form className="mb-8">
           <div className="flex flex-col md:flex-row md:items-center gap-y-4 justify-between">
             <div>
-              <h5 className="text-gray-100 text-xl mb-1">Correo electrónico</h5>
-              <p className="text-gray-500 text-sm">jorgetrejo@gmail.com</p>
+              <h5 className="text-gray-100 text-xl mb-1">Email</h5>
+              <p className="text-gray-500 text-sm">agu1laredu@gmail.com</p>
             </div>
             <div>
               <button className="w-full md:w-auto bg-secondary-900/50 py-3 px-4 rounded-lg hover:bg-secondary-900 hover:text-gray-100 transition-colors">
-                Cambiar email
+                change email
               </button>
             </div>
           </div>
           <hr className="my-8 border-gray-500/30 border-dashed" />
           <div className="flex flex-col md:flex-row md:items-center gap-y-4 justify-between">
             <div>
-              <h5 className="text-gray-100 text-xl mb-1">Contraseña</h5>
+              <h5 className="text-gray-100 text-xl mb-1">Password</h5>
               <p className="text-gray-500 text-sm">****************</p>
             </div>
             <div>
               <button className="w-full md:auto bg-secondary-900/50 py-3 px-4 rounded-lg hover:bg-secondary-900 hover:text-gray-100 transition-colors">
-                Cambiar contraseña
+                change password
               </button>
             </div>
           </div>
@@ -184,7 +184,7 @@ const Profile = () => {
             <RiShieldCheckLine className="text-5xl text-green-600" />
           </div>
           <div className="md:col-span-6">
-            <h5 className="text-gray-100 text-xl mb-2">Asegura tu cuenta</h5>
+            <h5 className="text-gray-100 text-xl mb-2">Secure your account</h5>
             <p className="text-gray-500">
               Two-factor authentication adds an extra layer of security to your
               account. To log in, in addition you'll need to provide a 6 digit
@@ -193,14 +193,14 @@ const Profile = () => {
           </div>
           <div className="flex justify-center">
             <button className="bg-green-600/70 hover:bg-green-600 transition-colors py-2 px-4 rounded-lg text-gray-100">
-              Activar
+              Activate
             </button>
           </div>
         </div>
       </div>
       {/* Connected accounts */}
       <div className="bg-secondary-100 p-8 rounded-xl mb-8">
-        <h1 className="text-xl text-gray-100">Conectar con cuentas</h1>
+        <h1 className="text-xl text-gray-100">Connect with accounts</h1>
         <hr className="my-8 border-gray-500/30" />
         <div className="flex flex-col md:flex-row gap-4 items-center bg-green-600/10 p-4 rounded-lg border border-dashed border-green-600 mb-8">
           <div className="flex justify-center">
@@ -321,9 +321,7 @@ const Profile = () => {
       </div>
       {/* Email preferences */}
       <div className="bg-secondary-100 p-8 rounded-xl mb-8">
-        <h1 className="text-xl text-gray-100">
-          Notificaciones por correo electrónico
-        </h1>
+        <h1 className="text-xl text-gray-100">Email notifications</h1>
         <hr className="my-8 border-gray-500/30" />
         <form className="mb-8">
           <div className="flex items-center gap-4">
@@ -366,7 +364,7 @@ const Profile = () => {
         <hr className="my-8 border-gray-500/30" />
         <div className="flex justify-end">
           <button className="bg-primary/80 text-black py-2 px-4 rounded-lg hover:bg-primary transition-colors">
-            Guardar
+            Save
           </button>
         </div>
       </div>
