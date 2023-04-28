@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
+import React, { useState } from "react";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 
 const Home = () => {
+  const [isClient, setIsClient] = useState(false);
+
   const Planilla = [
     {
       Id: "#14884",
@@ -84,20 +84,52 @@ const Home = () => {
     },
   ];
 
+  const filteredPlanilla = Planilla.filter(
+    ({ Type }) =>
+      (isClient && Type === "Client") || (!isClient && Type === "Employees")
+  );
+
   return (
     <div>
       <div
-        className=" p-8 rounded-xl"
+        className="p-8 rounded-xl"
         style={{
           backgroundColor: "#03494D",
           borderRadius: "15px",
-          marginTop: " 50px",
+          marginTop: "50px",
           height: "500px",
           overflow: "hidden",
           overflowY: "scroll",
         }}
       >
-        {Planilla.map(({ Id, Type, State, Process }) => (
+        <div
+          className="flex justify-center"
+          style={{ position: "relative", top: "-10px", left: "-35%" }}
+        >
+          <button
+            style={{ width: "200px", border: "2px solid black" }}
+            onClick={() => setIsClient(true)}
+            className={`mr-2 ${
+              !isClient
+                ? "bg-secondary-200 text-secondary-900"
+                : "bg-secondary-900 text-gray-300"
+            } py-2 px-4 rounded-md text-sm font-medium`}
+          >
+            Clients
+          </button>
+          <button
+            style={{ width: "200px", border: "2px solid black" }}
+            onClick={() => setIsClient(false)}
+            className={`ml-2 ${
+              isClient
+                ? "bg-secondary-200 text-secondary-900"
+                : "bg-secondary-900 text-gray-300"
+            } py-2 px-4 rounded-md text-sm font-medium`}
+          >
+            Employees
+          </button>
+        </div>
+        {filteredPlanilla.map(({ Id, Type, State, Process }) => (
           <div key={Id}>
             <div
               className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center mb-4 bg-secondary-900 p-4 rounded-xl"
@@ -141,35 +173,6 @@ const Home = () => {
                 <h5 className="md:hidden text-white font-bold mb-2">
                   Type Contract
                 </h5>
-                <Menu
-                  menuButton={
-                    <MenuButton className="flex items-center gap-x-2 bg-secondary-100 p-2 rounded-lg transition-colors">
-                      Acciones
-                    </MenuButton>
-                  }
-                  align="end"
-                  arrow
-                  arrowClassName="bg-secondary-100"
-                  transition
-                  menuClassName="bg-secondary-100 p-4"
-                >
-                  <MenuItem className="p-0 hover:bg-transparent">
-                    <Link
-                      to="/perfil"
-                      className="rounded-lg transition-colors text-gray-300 hover:bg-secondary-900 flex items-center gap-x-4 p-2 flex-1"
-                    >
-                      Dashboard tickets
-                    </Link>
-                  </MenuItem>
-                  <MenuItem className="p-0 hover:bg-transparent">
-                    <Link
-                      to="/perfil"
-                      className="rounded-lg transition-colors text-gray-300 hover:bg-secondary-900 flex items-center gap-x-4 p-2 flex-1"
-                    >
-                      Información
-                    </Link>
-                  </MenuItem>
-                </Menu>
               </div>
             </div>
           </div>
