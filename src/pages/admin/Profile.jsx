@@ -10,6 +10,8 @@ import { Switch } from "@headlessui/react";
 
 const Profile = () => {
   const [enabled, setEnabled] = useState(false);
+  const [enableds, setEnableds] = useState(false);
+  const [enabledss, setEnabledss] = useState(false);
   return (
     <>
       {/* Profile */}
@@ -51,14 +53,14 @@ const Profile = () => {
                 <input
                   type="text"
                   className="w-full py-2 px-4 outline-none rounded-lg bg-secondary-900"
-                  placeholder="Nombre(s)"
+                  placeholder="Name"
                 />
               </div>
               <div className="w-full">
                 <input
                   type="text"
                   className="w-full py-2 px-4 outline-none rounded-lg bg-secondary-900"
-                  placeholder="Apellido(s)"
+                  placeholder="Last name"
                 />
               </div>
             </div>
@@ -73,7 +75,7 @@ const Profile = () => {
               <input
                 type="text"
                 className="w-full py-2 px-4 outline-none rounded-lg bg-secondary-900"
-                placeholder="Nombre(s)"
+                placeholder="Name"
               />
             </div>
           </div>
@@ -87,7 +89,7 @@ const Profile = () => {
               <input
                 type="text"
                 className="w-full py-2 px-4 outline-none rounded-lg bg-secondary-900"
-                placeholder="Nombre(s)"
+                placeholder="Name"
               />
             </div>
           </div>
@@ -101,7 +103,7 @@ const Profile = () => {
               <input
                 type="text"
                 className="w-full py-2 px-4 outline-none rounded-lg bg-secondary-900"
-                placeholder="Nombre(s)"
+                placeholder="Name"
               />
             </div>
           </div>
@@ -266,16 +268,16 @@ const Profile = () => {
             </div>
             <div>
               <Switch
-                checked={enabled}
-                onChange={setEnabled}
+                checked={enableds}
+                onChange={setEnableds}
                 className={`${
-                  enabled ? "bg-primary" : "bg-secondary-900"
+                  enableds ? "bg-primary" : "bg-secondary-900"
                 } relative inline-flex h-6 w-11 items-center rounded-full`}
               >
                 <span className="sr-only">Enable notifications</span>
                 <span
                   className={`${
-                    enabled
+                    enableds
                       ? "translate-x-6 bg-secondary-900"
                       : "translate-x-1 bg-gray-500"
                   } inline-block h-4 w-4 transform rounded-full transition`}
@@ -299,16 +301,16 @@ const Profile = () => {
             </div>
             <div>
               <Switch
-                checked={enabled}
-                onChange={setEnabled}
+                checked={enabledss}
+                onChange={setEnabledss}
                 className={`${
-                  enabled ? "bg-primary" : "bg-secondary-900"
+                  enabledss ? "bg-primary" : "bg-secondary-900"
                 } relative inline-flex h-6 w-11 items-center rounded-full`}
               >
                 <span className="sr-only">Enable notifications</span>
                 <span
                   className={`${
-                    enabled
+                    enabledss
                       ? "translate-x-6 bg-secondary-900"
                       : "translate-x-1 bg-gray-500"
                   } inline-block h-4 w-4 transform rounded-full transition`}

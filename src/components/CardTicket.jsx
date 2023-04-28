@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { RiTicketLine, RiMore2Fill, RiAddLine } from "react-icons/ri";
-import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
+import { RiTicketLine, RiAddLine } from "react-icons/ri";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 
@@ -31,7 +30,14 @@ const CardTicket = (props) => {
   }
 
   return (
-    <div className=" p-8 rounded-xl" style={{ backgroundColor: "#03494D" }}>
+    <div
+      className=" p-8 rounded-xl"
+      style={{
+        backgroundColor: "#03494D",
+        width: "300px",
+        margin: "10px",
+      }}
+    >
       <div className="flex items-center justify-between mb-4">
         <div>
           <RiTicketLine

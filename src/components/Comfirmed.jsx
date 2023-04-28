@@ -226,7 +226,7 @@ const Home = () => {
                 <Menu
                   menuButton={
                     <MenuButton className="flex items-center gap-x-2 bg-secondary-100 p-2 rounded-lg transition-colors">
-                      Acciones
+                      Actions
                     </MenuButton>
                   }
                   align="end"
@@ -248,7 +248,7 @@ const Home = () => {
                       to="/perfil"
                       className="rounded-lg transition-colors text-gray-300 hover:bg-secondary-900 flex items-center gap-x-4 p-2 flex-1"
                     >
-                      Información
+                      Information
                     </Link>
                   </MenuItem>
                 </Menu>
