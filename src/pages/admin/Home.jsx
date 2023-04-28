@@ -1,68 +1,26 @@
-import React, { useState } from "react";
-import CardTicket from "../../components/CardTicket";
-import {
-  RiArrowLeftSLine,
-  RiArrowRightSLine,
-  RiSearch2Line,
-} from "react-icons/ri";
+import React from "react";
+import CardTicket from "../../components/CardTickesComponents/CardTicket";
+import CardTickets from "../../components/CardTickesComponents/Cardticketdos";
+import CardTicketss from "../../components/CardTickesComponents/CardTickettres";
+import CardTicketcuatro from "../../components/CardTickesComponents/CardTicketcuatro";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import PlanillaPage from "../../components/Comfirmed";
 
 const Home = () => {
-  function renderCardTickets() {
-    const cards = [
-      {
-        ticket: "total",
-        totalTickets: "$145,000",
-        text: "Total quantity",
-        texto: "Donations received",
-      },
-      {
-        ticket: "pending",
-        totalTickets: "5,000",
-        text: "Total quantity",
-        texto: "Employees",
-      },
-      {
-        ticket: "inProcess",
-        totalTickets: "130,000",
-        text: "Total quantity",
-        texto: "Clients",
-      },
-      {
-        ticket: "close",
-        totalTickets: "125,000",
-        text: "Total quantity",
-        texto: "Finishing projects",
-      },
-    ];
-
-    return cards.map((card) => (
-      <CardTicket
-        key={card.ticket}
-        ticket={card.ticket}
-        totalTickets={card.totalTickets}
-        text={card.text}
-        texto={card.texto}
-      />
-    ));
-  }
-
   return (
     <div>
       <div className="flex items-center justify-between mb-10">
         <h1 className="text-4xl text-white">
           Good morning, Aguilar J.Eduardo!
         </h1>
-        <div className="flex items-center gap-2 text-3xl">
-          <RiArrowLeftSLine className="hover:cursor-pointer hover:text-white transition-colors" />
-          <RiArrowRightSLine className="hover:cursor-pointer hover:text-white transition-colors" />
-        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {/* Card */}
-        {renderCardTickets()}
+        <CardTicket style={{ width: "300px" }} />
+        <CardTickets style={{ width: "300px" }} />
+        <CardTicketss style={{ width: "300px" }} />
+        <CardTicketcuatro style={{ width: "300px" }} />
       </div>
       <div>
         <h1
