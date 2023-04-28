@@ -24,7 +24,7 @@ const Home = () => {
     {
       Id: "#8888992",
       Type: "Client",
-      State: "Process",
+      State: "Confirmed",
       Process: "3%",
     },
     {
@@ -43,7 +43,7 @@ const Home = () => {
     {
       Id: "#1546664",
       Type: "Client",
-      State: "Process",
+      State: "Confirmed",
       Process: "50%",
     },
     {
@@ -56,20 +56,20 @@ const Home = () => {
     {
       Id: "#1456161",
       Type: "Employees",
-      State: "Complete",
+      State: "Process",
       Process: "50%",
     },
     {
       Id: "#29950",
       Type: "Employees",
-      State: "Confirmed",
+      State: "Process",
       Process: "30%",
     },
 
     {
       Id: "#20050",
       Type: "Client",
-      State: "Confirmed",
+      State: "Complete",
       Process: "50%",
     },
     {
@@ -82,6 +82,54 @@ const Home = () => {
       Id: "#27450",
       Type: "Client",
       State: "Confirmed",
+      Process: "70%",
+    },
+    {
+      Id: "#21150",
+      Type: "Client",
+      State: "Complete",
+      Process: "70%",
+    },
+    {
+      Id: "#25055",
+      Type: "Client",
+      State: "Complete",
+      Process: "70%",
+    },
+    {
+      Id: "#2951503",
+      Type: "Client",
+      State: "Complete",
+      Process: "70%",
+    },
+    {
+      Id: "#25880",
+      Type: "Client",
+      State: "Confirmed",
+      Process: "70%",
+    },
+    {
+      Id: "#2512340",
+      Type: "Client",
+      State: "Complete",
+      Process: "70%",
+    },
+    {
+      Id: "#251523510",
+      Type: "Employees",
+      State: "Process",
+      Process: "70%",
+    },
+    {
+      Id: "#255777220",
+      Type: "Employees",
+      State: "Process",
+      Process: "70%",
+    },
+    {
+      Id: "#253434110",
+      Type: "Employees",
+      State: "Process",
       Process: "70%",
     },
   ];
