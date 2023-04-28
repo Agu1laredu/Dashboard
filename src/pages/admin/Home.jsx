@@ -5,8 +5,6 @@ import {
   RiArrowRightSLine,
   RiSearch2Line,
 } from "react-icons/ri";
-import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
-import { Link } from "react-router-dom";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import PlanillaPage from "../../components/Comfirmed";
