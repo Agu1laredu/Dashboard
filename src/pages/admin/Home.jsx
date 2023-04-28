@@ -65,7 +65,19 @@ const Home = () => {
         {renderCardTickets()}
       </div>
       <div>
-        <h1 className="text-2xl text-white my-10">Planilla</h1>
+        <h1
+          className="text-2xl text-white my-10 "
+          style={{
+            width: "80px",
+            borderBottom: `4px solid #03494D`,
+            borderBottomLeftRadius: "10px",
+            borderBottomRightRadius: "10px",
+            transition: "border-bottom-color 0.5s ease-in-out",
+            cursor: "pointer",
+          }}
+        >
+          Board
+        </h1>
       </div>
       <div
         className=" p-8 rounded-xl"
