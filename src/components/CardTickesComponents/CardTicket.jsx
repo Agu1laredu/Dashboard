@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiTicketLine, RiAddLine } from "react-icons/ri";
+import { BiChevronsLeft, BiChevronsRight } from "react-icons/bi";
 
 const CardTicket = () => {
   const [isCard, setIscard] = useState(false);
@@ -38,13 +39,13 @@ const CardTicket = () => {
       <div
         className="flex items-center gap-4 text-3xl"
         style={{
-          marginBottom: "20px",
-          marginLeft: "10px",
+          position: "relative",
+          margin: "auto",
         }}
       >
         <button
           style={{
-            width: "200px",
+            width: "100%",
             border: "2px solid black",
           }}
           onClick={() => setIscard(true)}
@@ -54,10 +55,13 @@ const CardTicket = () => {
               : "bg-secondary-900 text-gray-300"
           } py-2 px-4 rounded-md text-sm font-medium`}
         >
-          Received
+          <BiChevronsLeft
+            className=" p-2 box-content  rounded-xl"
+            style={{ fontSize: "20px", margin: "auto" }}
+          />
         </button>
         <button
-          style={{ width: "200px", border: "2px solid black" }}
+          style={{ width: "100%", border: "2px solid black" }}
           onClick={() => setIscard(false)}
           className={`ml-2 ${
             isCard
@@ -65,7 +69,10 @@ const CardTicket = () => {
               : "bg-secondary-900 text-gray-300"
           } py-2 px-4 rounded-md text-sm font-medium`}
         >
-          Partners
+          <BiChevronsRight
+            className=" p-2 box-content  rounded-xl"
+            style={{ fontSize: "20px", margin: "auto" }}
+          />
         </button>
       </div>
       {filteredPlanilla.map(({ Id, totalTickets, texto, text }) => (
