@@ -1,264 +1,74 @@
-import React, { useState } from "react";
-import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
-import { Link } from "react-router-dom";
-import "@szhsin/react-menu/dist/index.css";
-import "@szhsin/react-menu/dist/transitions/slide.css";
+import "./App.css";
+import "styled-components";
+import React, { useState, useEffect } from "react";
+import DataTable from "react-data-table-component";
 
-const Home = () => {
-  const [isClient, setIsClient] = useState(false);
+const App = () => {
+  //1 - Configurar los hooks
+  const [users, setUsers] = useState([]);
 
-  const Planilla = [
-    {
-      Id: "#14884",
-      Type: "Client",
-      State: "Confirmed",
-      Process: "30%",
-    },
+  //2 - Función para mostrar los datos con fetch
+  const URL = "https://gorest.co.in/public/v2/users";
+  const showData = async () => {
+    const response = await fetch(URL);
+    const data = await response.json();
+    console.log(data);
+    setUsers(data);
+  };
 
-    {
-      Id: "#48999",
-      Type: "Employees",
-      State: "Process",
-      Process: "50%",
-    },
-    {
-      Id: "#8888992",
-      Type: "Client",
-      State: "Confirmed",
-      Process: "3%",
-    },
-    {
-      Id: "#15551",
-      Type: "Employees",
-      State: "Process",
-      Process: "70%",
-    },
-    {
-      Id: "#15988",
-      Type: "Client",
-      State: "Confirmed",
-      Process: "30%",
-    },
+  useEffect(() => {
+    showData();
+  }, []);
 
+  //3 - Configuramos las columns para Datatable
+  const columns = [
     {
-      Id: "#1546664",
-      Type: "Client",
-      State: "Confirmed",
-      Process: "50%",
+      name: "ID",
+      selector: (row) => row.id,
     },
     {
-      Id: "#14899",
-      Type: "Client",
-      State: "Complete",
-      Process: "30%",
-    },
-
-    {
-      Id: "#1456161",
-      Type: "Employees",
-      State: "Process",
-      Process: "50%",
+      name: "NAME",
+      selector: (row) => row.name,
     },
     {
-      Id: "#29950",
-      Type: "Employees",
-      State: "Process",
-      Process: "30%",
-    },
-
-    {
-      Id: "#20050",
-      Type: "Client",
-      State: "Complete",
-      Process: "50%",
-    },
-    {
-      Id: "#28950",
-      Type: "Employees",
-      State: "Complete",
-      Process: "3%",
-    },
-    {
-      Id: "#27450",
-      Type: "Client",
-      State: "Confirmed",
-      Process: "70%",
-    },
-    {
-      Id: "#21150",
-      Type: "Client",
-      State: "Complete",
-      Process: "70%",
-    },
-    {
-      Id: "#25055",
-      Type: "Client",
-      State: "Complete",
-      Process: "70%",
-    },
-    {
-      Id: "#2951503",
-      Type: "Client",
-      State: "Complete",
-      Process: "70%",
-    },
-    {
-      Id: "#25880",
-      Type: "Client",
-      State: "Confirmed",
-      Process: "70%",
-    },
-    {
-      Id: "#2512340",
-      Type: "Client",
-      State: "Complete",
-      Process: "70%",
-    },
-    {
-      Id: "#251523510",
-      Type: "Employees",
-      State: "Process",
-      Process: "70%",
-    },
-    {
-      Id: "#255777220",
-      Type: "Employees",
-      State: "Process",
-      Process: "70%",
-    },
-    {
-      Id: "#253434110",
-      Type: "Employees",
-      State: "Process",
-      Process: "70%",
+      name: "E-MAIL",
+      selector: (row) => row.email,
     },
   ];
-
-  const filteredPlanilla = Planilla.filter(
-    ({ Type }) =>
-      (isClient && Type === "Client") || (!isClient && Type === "Employees")
-  );
-
+  const customStyles = {
+    rows: {
+      style: {
+        minHeight: "100px",
+        marginTop: "-20px",
+        backgroundColor: "#03494D", // override the row height
+      },
+    },
+    headCells: {
+      style: {
+        paddingLeft: "8px", // override the cell padding for head cells
+        paddingRight: "8px",
+        backgroundColor: "#03494D",
+        fontSize: "20px",
+        fontFamily: "bold",
+      },
+    },
+    cells: {
+      style: {
+        paddingLeft: "8px", // override the cell padding for data cells
+        paddingRight: "8px",
+        backgroundColor: "#03494D",
+        fontSize: "20px",
+        fontFamily: "bold",
+      },
+    },
+  };
+  //4 - Mostramos la data en DataTable
   return (
-    <div>
-      <div
-        className="flex justify-center"
-        style={{ position: "relative", top: "30px" }}
-      >
-        <button
-          style={{ width: "200px", border: "2px solid black" }}
-          onClick={() => setIsClient(true)}
-          className={`mr-2 ${
-            !isClient
-              ? "bg-secondary-200 text-secondary-900"
-              : "bg-secondary-900 text-gray-300"
-          } py-2 px-4 rounded-md text-sm font-medium`}
-        >
-          Clients
-        </button>
-        <button
-          style={{ width: "200px", border: "2px solid black" }}
-          onClick={() => setIsClient(false)}
-          className={`ml-2 ${
-            isClient
-              ? "bg-secondary-200 text-secondary-900"
-              : "bg-secondary-900 text-gray-300"
-          } py-2 px-4 rounded-md text-sm font-medium`}
-        >
-          Employees
-        </button>
-      </div>
-      <div
-        className="p-8 rounded-xl"
-        style={{
-          backgroundColor: "#03494D",
-          borderRadius: "15px",
-          marginTop: "50px",
-          height: "500px",
-          overflow: "hidden",
-          overflowY: "scroll",
-        }}
-      >
-        {filteredPlanilla.map(({ Id, Type, State, Process }) => (
-          <div key={Id}>
-            <div
-              className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center mb-4 bg-secondary-900 p-4 rounded-xl"
-              style={{
-                cursor: "pointer",
-              }}
-            >
-              <div>
-                <h5 className="md:hidden text-white font-bold mb-2">ID</h5>
-                <span>{Id}</span>
-              </div>
-              <div>
-                <h5 className="md:hidden text-white font-bold mb-2">Type</h5>
-                <p>{Type}</p>
-              </div>
-              <div>
-                <h5 className="md:hidden text-white font-bold mb-2">State</h5>
-
-                <span className="py-1 px-2  rounded-lg">
-                  <p
-                    style={{
-                      color:
-                        State === "Process"
-                          ? "blue"
-                          : State === "Confirmed"
-                          ? "yellow"
-                          : State === "Complete"
-                          ? "Green"
-                          : "black",
-                    }}
-                  >
-                    {State}
-                  </p>
-                </span>
-              </div>
-              <div>
-                <h5 className="md:hidden text-white font-bold mb-2">Process</h5>
-                <span>{Process}</span>
-              </div>
-              <div>
-                <h5 className="md:hidden text-white font-bold mb-2">
-                  Type Contract
-                </h5>
-                <Menu
-                  menuButton={
-                    <MenuButton className="flex items-center gap-x-2 bg-secondary-100 p-2 rounded-lg transition-colors">
-                      Actions
-                    </MenuButton>
-                  }
-                  align="end"
-                  arrow
-                  arrowClassName="bg-secondary-100"
-                  transition
-                  menuClassName="bg-secondary-100 p-4"
-                >
-                  <MenuItem className="p-0 hover:bg-transparent">
-                    <Link
-                      to="/perfil"
-                      className="rounded-lg transition-colors text-gray-300 hover:bg-secondary-900 flex items-center gap-x-4 p-2 flex-1"
-                    >
-                      Dashboard tickets
-                    </Link>
-                  </MenuItem>
-                  <MenuItem className="p-0 hover:bg-transparent">
-                    <Link
-                      to="/perfil"
-                      className="rounded-lg transition-colors text-gray-300 hover:bg-secondary-900 flex items-center gap-x-4 p-2 flex-1"
-                    >
-                      Information
-                    </Link>
-                  </MenuItem>
-                </Menu>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="App">
+      <b style={{ fontSize: "50px" }}>Old Client</b>
+      <DataTable columns={columns} data={users} customStyles={customStyles} />
     </div>
   );
 };
 
-export default Home;
+export default App;

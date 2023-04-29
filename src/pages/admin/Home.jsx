@@ -46,21 +46,6 @@ const Home = () => {
         }}
       >
         <div style={{ marginBottom: "20px" }}>
-          <h5 className="md:hidden text-white font-bold mb-4">
-            Mantenimientos
-          </h5>
-          <div style={{ position: "relative", left: "30px", top: "30px" }}>
-            <div
-              className="hidden md:grid grid-cols-1 md:grid-cols-5 gap-4 mb-10 p-4"
-              style={{ marginTop: "40px" }}
-            >
-              <h5>ID</h5>
-              <h5 style={{ marginLeft: "-15px" }}>Type</h5>
-              <h5 style={{ marginLeft: "-15px" }}>State</h5>
-              <h5 style={{ marginLeft: "-50px" }}>Process</h5>
-              <h5 style={{ marginLeft: "-50px" }}>Type Contract</h5>
-            </div>
-          </div>
           <PlanillaPage />
         </div>
       </div>
