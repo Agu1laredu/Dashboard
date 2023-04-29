@@ -25,14 +25,37 @@ const App = () => {
     {
       name: "ID",
       selector: (row) => row.id,
+      style: {
+        marginTop: "30px",
+        borderRadius: "15px",
+        gap: "3px",
+        color: "white",
+        backgroundColor: "#131517", // Estilo de color de texto blanco
+      },
     },
     {
       name: "NAME",
       selector: (row) => row.name,
+      style: {
+        marginTop: "30px",
+        borderRadius: "15px",
+        width: "30px",
+        gap: "3px",
+        color: "white",
+        backgroundColor: "#131517", // Estilo de color de texto blanco
+      },
     },
     {
       name: "E-MAIL",
       selector: (row) => row.email,
+      style: {
+        marginTop: "30px",
+        borderRadius: "15px",
+        gap: "3px",
+        color: "white",
+        width: "100px",
+        backgroundColor: "#131517", // Estilo de color de texto blanco
+      },
     },
   ];
   const customStyles = {
@@ -45,8 +68,6 @@ const App = () => {
     },
     headCells: {
       style: {
-        paddingLeft: "8px", // override the cell padding for head cells
-        paddingRight: "8px",
         backgroundColor: "#03494D",
         fontSize: "20px",
         fontFamily: "bold",
@@ -54,8 +75,9 @@ const App = () => {
     },
     cells: {
       style: {
-        paddingLeft: "8px", // override the cell padding for data cells
-        paddingRight: "8px",
+        position: "absoluite",
+        marginLeft: "20px",
+        left: "-10px",
         backgroundColor: "#03494D",
         fontSize: "20px",
         fontFamily: "bold",
